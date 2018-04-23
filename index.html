@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>辩论计时器</title>
+    <script src="assets/scripts/comfirm.js"></script>
+    <link rel="stylesheet" href="assets/scripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/scripts/jquery_onepage/css/onepage-scroll.css">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <script src="assets/scripts/seajs/sea.js" id="seajsnode"></script>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="xixi">
+            <input type="password" id="password"/> <button onclick="showMain()">好</button>
+    </div>
+
+<div class="main hidden">
+
+    <!--主页-->
+    <div class="container-fluid" style="background-image:url(assets/images/2.jpg)">
+    </div>
+
+
+ <!-- 立论-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown1"  style="margin-top: 10px;"></h1>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id="beginBtn1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <span class="text-center"
+                      style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">立论</span><br>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown1_1"  style="margin-top: 10px;"></h1>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button id="beginBtn1_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn1_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                    <!--</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 结束 -->
+
+
+ <!-- 立论质询-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown2" style="margin-top: 10px;"></h1>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id="beginBtn2" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn2" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <span class="text-center"
+                      style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">立论质询</span><br>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown2_1" style="margin-top: 10px;"></h1>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button id="beginBtn2_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn2_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                    <!--</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 结束 -->
+
+<!-- 驳论-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown3" style="margin-top: 10px;"></h1>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id="beginBtn3" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn3" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <span class="text-center"
+                      style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">驳论</span><br>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown3_1" style="margin-top: 10px;"></h1>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button id="beginBtn3_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn3_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                    <!--</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 结束 -->
+
+
+ <!-- 驳论质询-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown4" style="margin-top: 10px;"></h1>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id="beginBtn4" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn4" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <span class="text-center"
+                      style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">驳论质询</span><br>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown4_1" style="margin-top: 10px;"></h1>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button id="beginBtn4_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn4_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                    <!--</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 结束 -->
+
+ <!-- 质询小结-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown5" style="margin-top: 10px;"></h1>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id="beginBtn5" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn5" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <span class="text-center"
+                      style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">质询小结</span><br>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown5_1" style="margin-top: 10px;"></h1>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button id="beginBtn5_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn5_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                    <!--</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 结束 -->
+<!-- 自由辩论-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown7" style="margin-top: 10px;"></h1>
+                <div style="display:none;">
+                    <button id="beginBtn7" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn7" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn7" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center" style="margin-top: 2%;">
+                <span class="text-center" style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">自由辩论</span>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown7_1" style="margin-top: 10px;"></h1>
+                <div style="display:none;">
+                    <button id="beginBtn7_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn7_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn7_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="btn-group" role="group" aria-label="...">
+                <button id="doubleBtn2" class="btn btn-primary btn-sm" style="background-color: #306A96">切换</button>
+                <button id="doubleStopBtn2" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                <!--<button id="doubleResetBtn2" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+            </div>
+        </div>
+    </div>
+    <!--结束-->
+    <!-- 自由分配-->
+    <div class="container-fluid" style="position: relative">
+        <div class="row text-center margin-top-sm">
+        </div>
+        <div class="row margin-top-md">
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_left">正方</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h3 style="font-family: 'Microsoft YaHei';font-size: 8rem;">VS</h3>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <div class="clearfix">
+                        <h1 class="bian_name_right">反方</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown6" style="margin-top: 10px;"></h1>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button id="beginBtn6" class="btn btn-primary btn-sm" style="background-color: #306A96">开始</button>
+                    <button id="stopBtn6" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置</button>-->
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <span class="text-center"
+                      style="font-family: 'Microsoft YaHei';font-size: 3.5rem;">结辩</span><br>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h1 id="timedown6_1" style="margin-top: 10px;"></h1>
+                <div class="btn-group" role="group" aria-label="..." >
+                    <button id="beginBtn6_1" class="btn btn-primary btn-sm" style="background-color: #306A96">开始
+                    </button>
+                    <button id="stopBtn6_1" class="btn btn-danger btn-sm" style="background-color: #AA3131">停止</button>
+                    <!--<button id="resetBtn6_1" class="btn btn-warning btn-sm" style="background-color: #ED972F">重置-->
+                    <!--</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 结束 -->
+
+    
+</div>
+
+<script type="text/javascript">
+    // seajs配置
+    seajs.config({
+        base: "./assets/scripts/",
+        alias: {
+            "jquery": "jquery/jquery",
+            "onepage": "jquery_onepage/js/jquery.onepage-scroll",
+            "jplay": "jquery_jplay/jquery.jplayer.min",
+            "timer": "jquery_custimer/jquery.custimer",
+            "jstorage": "jquery_jstorage/jstorage.min"
+        }
+    })
+
+    // 加载入口模块
+    seajs.use("application/application");
+    seajs.use("timedown/main");
+
+    $(document).keydown(function (e) {
+        //自由分配-正方：A键开始 S键结束
+        if (e.keyCode == 65) {
+            $("#beginBtn6").click();
+        }
+        if (e.keyCode == 83) {
+            $("#stopBtn6").click();
+        }
+        //自由分配-反方：D键开始 F键结束
+        if (e.keyCode == 68) {
+            $("#beginBtn6_1").click();
+        }
+        if (e.keyCode == 70) {
+            $("#stopBtn6_1").click();
+        }
+        //自由辩论-G切换
+        if (e.keyCode == 71) {
+            $("#doubleBtn2").click();
+        }
+        //自由辩论-H停止
+        if (e.keyCode == 72) {
+            $("#doubleStopBtn2").click();
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
+
